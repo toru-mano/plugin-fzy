@@ -6,10 +6,6 @@ function fzy_select_history
         end
 
         history | fzy $fzy_flags | read foo
-
-        if [ $foo ]
-                commandline $foo
-        else
-                commandline ''
-        end
+        commandline $foo
+        commandline -f repaint
 end
